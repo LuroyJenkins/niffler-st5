@@ -2,6 +2,7 @@ package guru.qa.niffler.pages;
 
 import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.SelenideElement;
+import guru.qa.niffler.pages.components.MainHeader;
 
 import static com.codeborne.selenide.CollectionCondition.size;
 import static com.codeborne.selenide.Condition.text;
@@ -11,6 +12,7 @@ public class MainPage {
     private final ElementsCollection spendingRows = $(".spendings-table tbody").$$("tr");
     private final SelenideElement deleteSpendingBtn = $(".spendings__bulk-actions button");
 
+    public final MainHeader header = new MainHeader();
 
     public SelenideElement findSpendingRowByDescription(String description) {
         return spendingRows.find(text(description));
